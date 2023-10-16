@@ -8,6 +8,7 @@
 </h:head>
 <h:body>
     <h:form>
+        <h:link outcome="/addContact.xhtml" value="Добавить контакт" />
         <p:dataTable var="contact" value="#{contactBean.contacts}">
             <p:column headerText="Имя">
                 <h:outputText value="#{contact.firstName}" />
