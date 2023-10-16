@@ -17,7 +17,7 @@ public class PhoneBookServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         List<Contact> contacts = contactService.getAllContacts();
         request.setAttribute("contacts", contacts);
-        request.getRequestDispatcher("META-INF/maven/contacts.xhtml").forward(request, response);
+        request.getRequestDispatcher("WebContent/contacts.xhtml").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {

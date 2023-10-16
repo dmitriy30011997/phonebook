@@ -30,6 +30,4 @@ public class ContactBean {
         lastName = null;
         phoneNumber = null;
     }
-
-    // Геттеры и сеттеры для полей
 }
