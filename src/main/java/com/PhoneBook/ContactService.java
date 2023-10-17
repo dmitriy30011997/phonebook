@@ -11,7 +11,7 @@ public class ContactService {
     private EntityManager entityManager;
 
     public List<Contact> getAllContacts() {
-        return entityManager.createQuery("SELECT c FROM Contact c", Contact.class).getResultList();
+        return ContactRepository.getAllContacts(entityManager);
     }
 
     public void addContact(Contact contact) {
