@@ -40,18 +40,13 @@ public class ContactBean {
 
     public void searchContacts() {
         List<Contact> searchResults = searchService.searchContacts(searchTerm);
-        // Обновить список контактов с результатами поиска
-        // Это можно реализовать, сохраняя результаты поиска в другом свойстве и отображая их на странице.
     }
 
     public void sortContacts() {
         List<Contact> sortedContacts = sortService.getContactsSortedByName();
-        // Обновить список контактов с отсортированными результатами
-        // Также, это можно реализовать, сохраняя отсортированный список в другом свойстве и отображая его на странице.
     }
 
     public void deleteContact(Long contactId) {
         deleteService.deleteContact(contactId);
-        // После удаления контакта, обновите список контактов.
     }
 }
