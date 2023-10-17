@@ -24,4 +24,12 @@ public class ContactService {
             entityManager.remove(contact);
         }
     }
+
+    public List<Contact> searchContacts(String searchTerm) {
+        return ContactRepository.searchContacts(entityManager, searchTerm);
+    }
+
+    public List<Contact> getSortedContacts() {
+        return ContactRepository.getSortedContacts(entityManager);
+    }
 }

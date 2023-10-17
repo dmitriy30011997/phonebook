@@ -9,6 +9,8 @@
 <h:body>
     <h:form>
         <h:link outcome="/addContact.xhtml" value="Добавить контакт" />
+        <h:inputText value="#{contactBean.searchText}" placeholder="Поиск по имени или фамилии" />
+        <p:commandButton value="Поиск" action="#{contactBean.searchContacts}" />
         <p:dataTable var="contact" value="#{contactBean.contacts}">
             <p:column headerText="Имя">
                 <h:outputText value="#{contact.firstName}" />
@@ -18,6 +20,23 @@
             </p:column>
             <p:column headerText="Телефон">
                 <h:outputText value="#{contact.phoneNumber}" />
+            </p:column>
+            <p:column headerText="Действия">
+                <p:commandButton value="Удалить" action="#{contactBean.deleteContact(contact.id)}" update="contactsTable" />
+            </p:column>
+        </p:dataTable>
+        <p:dataTable id="contactsTable" var="contact" value="#{contactBean.contacts}">
+            <p:column headerText="Имя">
+                <h:outputText value="#{contact.firstName}" />
+            </p:column>
+            <p:column headerText="Фамилия">
+                <h:outputText value="#{contact.lastName}" />
+            </p:column>
+            <p:column headerText="Телефон">
+                <h:outputText value="#{contact.phoneNumber}" />
+            </p:column>
+            <p:column headerText="Действия">
+                <p:commandButton value="Удалить" action="#{contactBean.deleteContact(contact.id)}" update="contactsTable" />
             </p:column>
         </p:dataTable>
     </h:form>
